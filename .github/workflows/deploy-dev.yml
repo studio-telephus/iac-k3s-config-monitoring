@@ -16,7 +16,7 @@ jobs:
           SshPort: ${{ secrets.TEL_SSH_PORT }}
           SshUser: ${{ secrets.TEL_SSH_USER }}
           SshPrivateKey: ${{ secrets.GHA_SSH_PRIVATE_KEY }}
-          RemotePath: "~/components/k3s/dev/config/monitoring"
+          RemotePath: "~/build/k3s/dev/config/monitoring"
           BackendConfig: >
             {
               "endpoint": "${{ vars.MINIO_ADM_S3_ENDPOINT }}",
@@ -32,5 +32,5 @@ jobs:
             }
           Tfvars: >
             env="dev"
-          DryRun: true
+          DryRun: false
           Destroy: false
